@@ -14,6 +14,13 @@ public class Deck {
 		for (String card : this.cards) {
 			list.add(card);
 		}
-		Map<Integer, Suit> m = new HashMap<Integer, Suit>();
+		// Map 4 lists of cards to each suit...
+		// Not sure if I'm doing this correctly...
+		// Feels like I'm overriding it every single time
+		Map<List<String>, Suit> suits = new HashMap<List<String>, Suit>();
+		suits.put(list, Suit.Hearts);
+		suits.put(list, Suit.Diamonds);
+		suits.put(list, Suit.Clubs);
+		suits.put(list, Suit.Spades);
 	}
 }
