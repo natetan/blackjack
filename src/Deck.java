@@ -2,15 +2,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.Random;
 
 public class Deck {
 	public String[] cards = {
 			"2", "3", "4", "5", "6", "7", "8", "9", "10",
-			"A", "J", "Q", "K"
+			"Ace", "Jack", "Queen", "King"
 	};
+	
+	private Random r;
 	
 	public Deck() {
 		List<String> list = new ArrayList<String>();
+		this.r = new Random();
 		for (String card : this.cards) {
 			list.add(card);
 		}
@@ -22,5 +26,18 @@ public class Deck {
 		suits.put(list, Suit.Diamonds);
 		suits.put(list, Suit.Clubs);
 		suits.put(list, Suit.Spades);
+	}
+	
+	public Suit getSuit() {
+		List<Suit> suits = new ArrayList<Suit>();
+		suits.add(Suit.Hearts);
+		suits.add(Suit.Diamonds);
+		suits.add(Suit.Clubs);
+		suits.add(Suit.Spades);
+		return suits.get(this.r.nextInt(suits.size()));
+	}
+	
+	public String getValue() {
+		return this.cards[r.nextInt(this.cards.length)];
 	}
 }
