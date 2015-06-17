@@ -3,9 +3,12 @@ public class Card {
 	private Deck deck;
 	private String value;
 	private Suit suit;
+	private String display;
 	
 	public Card() {
-		deck = new Deck();
+		this.deck = new Deck();
+		this.display = "";
+		
 	}
 	
 	// This method is supposed to be used to get me the value of the card,
@@ -13,6 +16,7 @@ public class Card {
 	// cards is a tad bit difficult...
 	public int getValue() {
 		String value = this.deck.getValue();
+		this.display = value;
 		if (value.equals("Jack") || value.equals("Queen") || value.equals("King")) {
 			return 10;
 		} else if (value.equals("Ace")) {

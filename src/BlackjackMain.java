@@ -38,11 +38,13 @@ public class BlackjackMain {
 		System.out.printf("\t%s\n\t%s\n\t%s\n", option1, option2, option3);
 		int choice = console.nextInt();
 		if (choice == 1) {
-			
+			// Add a card to the hand, and add the sum as well. 
 		} else if (choice == 2) {
-			
+			// Stop playing and compare sums (so implement a compareTo method?) to see who wins
 		} else { // choice == 3 
-			
+			// Quit the program
+			// Give them a fairly nice goodbye message
+			// Ask them if they wanna play again 
 		}
 	}
 }
