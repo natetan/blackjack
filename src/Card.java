@@ -15,14 +15,8 @@ public class Card {
 	// which each number as its own respective value, but converting the face
 	// cards is a tad bit difficult...
 	public int getValue() {
-		String value = this.deck.getValue();
-		this.display = value;
-		if (value.equals("Jack") || value.equals("Queen") || value.equals("King")) {
-			return 10;
-		} else if (value.equals("Ace")) {
-			return 1;
-		} else {
-		}
+		String faceValue = this.deck.getFaceValue();
+		int value = this.deck.getValue();
 	}
 	
 	public Suit getSuit() {
