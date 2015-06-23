@@ -1,7 +1,5 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
 import java.util.Random;
 
 public class Deck {
@@ -15,19 +13,7 @@ public class Deck {
 	private Random r;
 	
 	public Deck() {
-		List<Integer> list = new ArrayList<Integer>();
 		this.r = new Random();
-		for (int card : this.cards) {
-			list.add(card);
-		}
-		// Map 4 lists of cards to each suit...
-		// Not sure if I'm doing this correctly...
-		// Feels like I'm overriding it every single time
-		Map<List<Integer>, Suit> suits = new HashMap<List<Integer>, Suit>();
-		suits.put(list, Suit.Hearts);
-		suits.put(list, Suit.Diamonds);
-		suits.put(list, Suit.Clubs);
-		suits.put(list, Suit.Spades);
 	}
 	
 	public Suit getSuit() {
