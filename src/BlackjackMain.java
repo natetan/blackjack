@@ -15,7 +15,7 @@ public class BlackjackMain {
 		System.out.println("Welcome to my game of BlackJack. If you don't");
 		System.out.println("already know what game that is, then you're clearly");
 		System.out.println("out of luck. You're playing with the PC to see who");
-		System.out.println("gets to " + SUM + "first.");
+		System.out.println("gets to " + SUM + " first.");
 		System.out.println();
 	}
 	
@@ -26,7 +26,7 @@ public class BlackjackMain {
 		// displays the current cards?
 		System.out.println("First Card:\t" + card.getCard());
 		System.out.println("Second Card:\t" + card.getCard());
-		System.out.println("Current Sum:\t"); // Card.getSum or make a Hand class?
+		System.out.println("Current Sum:\t" + card.getSum());
 		System.out.println();
 	}
 	
