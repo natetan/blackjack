@@ -14,9 +14,7 @@ public class Deck {
 	public Deck() {
 		this.r = new Random();
 		this.cards = new ArrayList<String>();
-		for (String value : this.values) {
-			this.cards.add(value);
-		}
+		this.transfer(this.values, this.cards);
 	}
 	
 	public Suit getSuit() {
@@ -55,5 +53,11 @@ public class Deck {
 	
 	public String getValue() {
 		return this.cards.get(this.r.nextInt(this.cards.size()));
+	}
+	
+	private void transfer(String[] items, List<String> list) {
+		for (String item : items) {
+			list.add(item);
+		}
 	}
 }

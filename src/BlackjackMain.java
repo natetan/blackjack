@@ -3,11 +3,12 @@ import java.util.Scanner;
 public class BlackjackMain {
 	public static final int SUM = 21;
 	
-	public static void main(String[] args) {
+	public static void main(String[] arguments) {
 		Card card = new Card();
+		Hand hand = new Hand();
 		Scanner console = new Scanner(System.in);
 		giveIntro();
-		initiate(card);
+		initiate(hand, card);
 		play(console);
 	}
 	
@@ -19,14 +20,11 @@ public class BlackjackMain {
 		System.out.println();
 	}
 	
-	public static void initiate(Card card) {
+	public static void initiate(Hand hand, Card card) {
 		System.out.println("Here are your first 2 cards!");
 		System.out.println();
-		// Maybe create a Hand class that has a function which
-		// displays the current cards?
-		System.out.println("First Card:\t" + card.getCard());
-		System.out.println("Second Card:\t" + card.getCard());
-		System.out.println("Current Sum:\t" + card.getSum());
+		System.out.println(hand.currentHand(card));
+		System.out.println("Current Sum: " + card.getSum());
 		System.out.println();
 	}
 	
