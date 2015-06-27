@@ -55,23 +55,19 @@ public class Card {
 		}
 	}
 	
-	private boolean isOver21(int sum) {
-		return sum >= 21;
+	public boolean blackJack() {
+		return this.getSum() == 21;
 	}
 	
-	/*
-	 * NOTE
-	 * Appparently, checking for the ace cases is currently not available bc
-	 * there's an infinite loop going on and I am not sure why although I would
-	 * like to fix the problem
-	 */
+	public boolean isGameOver() {
+		return this.getSum() > 21;
+	}
+	
 	public int checkAce() {
-		// if 11 + current sum != 21, ace = 11
-		// else ace = 1
-		if (!isOver21(11 + this.getSum())) {
-			return 11;
-		} else {
+		if (11 + this.getSum() > 21) {
 			return 1;
+		} else {
+			return 11;
 		}
 	}
 }
