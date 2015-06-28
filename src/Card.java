@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Card {
 	private Deck deck;
@@ -68,6 +69,20 @@ public class Card {
 			return 1;
 		} else {
 			return 11;
+		}
+	}
+	
+	public int getPcSum() {
+		Random r = new Random();
+		int number = r.nextInt(4);
+		if (number == 0) {
+			return 18;
+		} else if (number == 1) {
+			return 19;
+		} else if (number == 2) {
+			return 20;
+		} else {
+			return 21;
 		}
 	}
 }

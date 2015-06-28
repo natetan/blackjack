@@ -32,7 +32,8 @@ public class BlackjackMain {
 		String option1 = "1) Hit";
 		String option2 = "2) Place Cards";
 		String option3 = "3) Fold";
-		while (!card.isGameOver() && !card.blackJack()) {
+		boolean place = true;
+		while (!card.isGameOver() && !card.blackJack() && place) {
 			System.out.println("What would you like to do?");
 			System.out.printf("\t%s\n\t%s\n\t%s\n", option1, option2, option3);
 			int choice = console.nextInt();
@@ -41,7 +42,18 @@ public class BlackjackMain {
 				System.out.println("Current Sum : " + card.getSum());
 				System.out.println();
 			} else if (choice == 2) {
-				// Stop playing and compare sums (so implement a compareTo method?) to see who wins
+				place = false;
+				int sum = card.getSum();
+				int pcSum = card.getPcSum();
+				System.out.println("Your sum: " + sum);
+				System.out.println("Computer sum: " + pcSum);
+				if (sum > pcSum) {
+					System.out.println("Congrats! You beat the computer!");
+				} else if (sum < pcSum) {
+					System.out.println("You suck! You lost to artificial intelligence!");
+				} else { // they're equal
+					System.out.println("It was a tie!");
+				}
 			} else { // choice == 3 
 				// Quit the program
 				// Give them a fairly nice goodbye message
