@@ -14,16 +14,4 @@ public class Hand {
 		}
 		return hand;
 	}
-	
-	public void hit() {
-		
-	}
-	
-	public void place() {
-		
-	}
-	
-	public void fold() {
-		
-	}
 }

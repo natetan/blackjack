@@ -54,10 +54,11 @@ public class BlackjackMain {
 				} else { // they're equal
 					System.out.println("It was a tie!");
 				}
-			} else { // choice == 3 
-				// Quit the program
-				// Give them a fairly nice goodbye message
-				// Ask them if they wanna play again 
+			} else { // fold
+				place = false;
+				System.out.print("Wow...you really didn't think you could win? The computer's sum ");
+				System.out.println("was " + (card.getSum() - 1));
+				System.out.println("You're a sore loser! Better luck next time!");
 			}
 			if (card.isGameOver()) {
 				System.out.println("Busted! You lost the game!");
