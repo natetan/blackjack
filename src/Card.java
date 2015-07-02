@@ -8,6 +8,8 @@ public class Card {
 	private Suit suit;
 	private List<String> cards;
 	
+	public static final int STARTING_CARDS = 2;
+	
 	public Card() {
 		this.deck = new Deck();
 		this.cards = new ArrayList<String>();
@@ -64,7 +66,7 @@ public class Card {
 		return this.getSum() > 21;
 	}
 	
-	public int checkAce() {
+	private int checkAce() {
 		if (11 + this.getSum() > 21) {
 			return 1;
 		} else {
@@ -83,6 +85,46 @@ public class Card {
 			return 20;
 		} else {
 			return 21;
+		}
+	}
+	
+	public String showHand(Card card) {
+		String hand = "";
+		for (int i = 0; i < STARTING_CARDS; i++) {
+			hand += "Card " + (i + 1) + ": " + this.getCard() + "\n";
+		}
+		return hand;
+	}
+	
+	public void hit() {
+		System.out.println("Next card: " + this.getCard());
+		System.out.println("Current Sum : " + this.getSum());
+		System.out.println();
+	}
+	
+	public void place() {
+		int sum = this.getSum();
+		int pcSum = this.getPcSum();
+		System.out.println("Your sum: " + sum);
+		System.out.println("Computer sum: " + pcSum);
+		if (sum > pcSum) {
+			System.out.println("Congrats! You beat the computer!");
+		} else if (sum < pcSum) {
+			System.out.println("You suck! You lost to artificial intelligence!");
+		} else { // they're equal
+			System.out.println("It was a tie!");
+		}
+	}
+	
+	public void fold() {
+		System.out.print("Wow...you really didn't think you could win? The computer's sum ");
+		System.out.println("was " + (this.getSum() - 1));
+		System.out.println("You're a sore loser! Better luck next time!");
+	}
+	
+	public void checkChoice(int choice) {
+		if (choice != 1 || choice != 2 || choice != 3) {
+			throw new IllegalArgumentException("That's not a valid choice!");
 		}
 	}
 }

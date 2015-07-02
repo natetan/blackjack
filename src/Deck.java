@@ -26,31 +26,6 @@ public class Deck {
 		return suits.get(this.r.nextInt(suits.size()));
 	}
 	
-	public int getIntValue() {
-		String value = this.cards.get(this.r.nextInt(this.cards.size()));
-		if (value.equals("Ace")) {
-			return 1;
-		} else if (value.equals("2")) {
-			return 2;
-		} else if (value.equals("3")) {
-			return 3;
-		} else if (value.equals("4")) {
-			return 4;
-		} else if (value.equals("5")) {
-			return 5;
-		} else if (value.equals("6")) {
-			return 6;
-		} else if (value.equals("7")) {
-			return 7;
-		} else if (value.equals("8")) {
-			return 8;
-		} else if (value.equals("9")) {
-			return 9;
-		} else {
-			return 10;
-		}
-	}
-	
 	public String getValue() {
 		return this.cards.get(this.r.nextInt(this.cards.size()));
 	}
