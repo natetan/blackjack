@@ -1,3 +1,11 @@
+/*
+ * Yulong Tan
+ * July 2nd, 2015
+ * 
+ * This class represents a Bicycle Deck of playing cards, with cards
+ * from Ace to King and the 4 Suits with each card
+ */
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
